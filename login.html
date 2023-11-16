@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title> Login </title>
+     <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <div id="error-message" style="color: red;"></div>
+    <form class="box" action="processar_login.php" method="POST">
+  
+      <label for="portilho">Nome de Usuário:</label>
+      <input type="text" id="portilho" name="portilho" required>
+
+      <label for="123">Senha:</label>
+      <input type="password" id="123" name="123" required>
+
+      <input type="submit" value="Entrar">
+  </form>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const erro = urlParams.get("erro");
+
+    if (erro === "1") {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.textContent = "Usuário e/ou senha incorretos. Por favor, tente novamente.";
+    }
+</script>
+    
+  </body>
+</html>
